@@ -30,6 +30,11 @@ public class QuestionController {
         return questionService.getQuestionById(id);
     }
 
+    @GetMapping("/quiz/{quiz_id}")
+    public List<Question> getQuestionByQuiz(@PathVariable Long quiz_id) {
+        return questionService.getQuestionByQuizId(quiz_id);
+    }
+
     @PostMapping
     public Question createQuestion(@RequestBody Question question) {
         return questionService.saveQuestion(question);
